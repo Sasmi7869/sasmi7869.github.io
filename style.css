@@ -198,20 +198,15 @@ a {
 ================================= */
 
 .hobbies-choice {
-
     background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.15),
-            rgba(0, 0, 0, 0.25)
-        ),
+        linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
         url("./3capes.jpeg");
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    background-size: cover, contain;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-color: #142b3b;
 }
-
 
 /* Hobbies heading */
 

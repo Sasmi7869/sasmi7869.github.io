@@ -261,4 +261,409 @@ a {
 
     color: #252c2e;
 
-    background: #f
+    background: #f4f1e9;
+
+}
+
+.academic-page {
+    --accent: #496b83;
+}
+
+.hobbies-page {
+
+    --accent: #8a7657;
+
+    background: #f2eee5;
+
+}
+
+
+/* Navigation */
+
+.site-nav {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 28px 6vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(37,44,46,.13);
+
+}
+
+.wordmark {
+
+    font: 600 1.2rem var(--serif);
+
+    text-decoration: none;
+
+    letter-spacing: .04em;
+
+}
+
+.wordmark span {
+    color: #c99f69;
+}
+
+.site-nav div {
+
+    display: flex;
+
+    gap: 28px;
+
+}
+
+.site-nav div a {
+
+    font-size: .83rem;
+
+    text-decoration: none;
+
+    color: #626a68;
+
+}
+
+.site-nav div a[aria-current="page"] {
+
+    color: #1d292d;
+
+    border-bottom: 1px solid var(--accent);
+
+    padding-bottom: 5px;
+
+}
+
+
+/* =================================
+   MAIN CONTENT
+================================= */
+
+.inner-main {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: clamp(55px,9vw,110px) 6vw 70px;
+
+}
+
+.inner-main > .eyebrow {
+    color: var(--accent);
+}
+
+.inner-main h1 {
+
+    margin: 0 0 24px;
+
+    font: 500 clamp(3.4rem,8vw,6.5rem)/.98 var(--serif);
+
+    letter-spacing: -.05em;
+
+}
+
+.inner-main h1 em {
+
+    color: var(--accent);
+
+    font-weight: 500;
+
+}
+
+.lead {
+
+    max-width: 650px;
+
+    color: #626a68;
+
+    font-size: clamp(1.05rem,2vw,1.25rem);
+
+    line-height: 1.75;
+
+}
+
+.rule {
+
+    height: 1px;
+
+    background: rgba(37,44,46,.16);
+
+    margin: 55px 0 42px;
+
+}
+
+
+/* =================================
+   ACADEMIC CONTENT
+================================= */
+
+.content-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px 70px;
+
+}
+
+.content-grid article > .eyebrow {
+
+    color: var(--accent);
+
+    font-size: .65rem;
+
+}
+
+.content-grid h2 {
+
+    margin-bottom: 12px;
+
+    font: 500 1.8rem var(--serif);
+
+}
+
+.content-grid article p:not(.eyebrow) {
+
+    color: #69716e;
+
+    line-height: 1.75;
+
+}
+
+.content-grid ul {
+
+    color: #69716e;
+
+    line-height: 2;
+
+}
+
+
+/* Links */
+
+.text-link {
+
+    display: inline-block;
+
+    color: #405f73;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #9aa9ae;
+
+    padding-bottom: 4px;
+
+    font-size: .86rem;
+
+}
+
+.link-row {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+}
+
+.back-link {
+
+    display: inline-block;
+
+    margin-top: 65px;
+
+    color: #333d3d;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #9aa9ae;
+
+    padding-bottom: 4px;
+
+    font-size: .86rem;
+
+}
+
+
+/* =================================
+   HOBBIES CONTENT
+================================= */
+
+.hobby-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+}
+
+.hobby-card {
+
+    min-height: 220px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    background: #e6e1d6;
+
+}
+
+.hobby-card:nth-child(2) {
+    background: #dce3dc;
+}
+
+.hobby-card:nth-child(3) {
+    background: #e6ddd2;
+}
+
+.hobby-card:nth-child(4) {
+    background: #dfe2e1;
+}
+
+.hobby-card > span {
+
+    margin-bottom: auto;
+
+    color: #8b8c7f;
+
+    font-size: .72rem;
+
+    letter-spacing: .12em;
+
+}
+
+.hobby-card h2 {
+
+    margin-top: 28px;
+
+    font: 500 1.8rem var(--serif);
+
+}
+
+.hobby-card p {
+
+    max-width: 340px;
+
+    margin-bottom: 0;
+
+    color: #69716e;
+
+    line-height: 1.75;
+
+}
+
+.small-note {
+
+    margin-top: 30px;
+
+    color: #7a817b;
+
+    font-size: .88rem;
+
+}
+
+
+/* =================================
+   INNER PAGE FOOTER
+================================= */
+
+.inner-footer {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 25px 6vw 35px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #858b84;
+
+    font-size: .63rem;
+
+    letter-spacing: .15em;
+
+}
+
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 700px) {
+
+    .welcome {
+        padding: 34px 18px 22px;
+    }
+
+    .welcome-heading {
+        padding-bottom: 25px;
+    }
+
+    .choices {
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+    }
+
+    .choice {
+
+        min-height: 340px;
+
+        padding: 26px;
+
+    }
+
+    .academic-title,
+    .hobbies-title {
+        top: 25px;
+        left: 25px;
+        font-size: 2rem;
+    }
+
+    .landing-footer {
+        font-size: .52rem;
+    }
+
+    .content-grid,
+    .hobby-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+    .inner-main {
+        padding-top: 65px;
+    }
+
+    .site-nav {
+        padding: 22px 6vw;
+    }
+
+    .site-nav div {
+        gap: 16px;
+    }
+
+    .inner-footer {
+        font-size: .52rem;
+    }
+
+}

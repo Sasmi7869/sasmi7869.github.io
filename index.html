@@ -1,61 +1,1171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Welcome to me — Sreenivasan K. R.</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ps5-portal-high-bitrate - Higher Bitrate Tools for PlayStation Portal</title>
+  <meta name="description" content="Experimental higher bitrate tools for PlayStation Portal. Windows, macOS, Linux, and an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile. Download and set up on Windows with this simple guide.">
+  <meta name="keywords" content="PlayStation Portal, higher bitrate, PS5 remote play, Ethernet relay, Raspberry Pi 4, 100 Mbps profile, Windows download, macOS, Linux, video quality, streaming tools">
+  <meta name="author" content="ps5-portal-high-bitrate">
+  <meta property="og:title" content="ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal">
+  <meta property="og:description" content="Experimental higher bitrate tools for PlayStation Portal. Windows, macOS, Linux, and an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta property="og:url" content="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal">
+  <meta name="twitter:description" content="Experimental higher bitrate tools for PlayStation Portal. Windows, macOS, Linux, and an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f7f9fc;
+      color: #1f2937;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      line-height: 1.2;
+      color: #0f172a;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 1.6rem;
+      line-height: 1.3;
+      color: #0f172a;
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin: 1.5rem 0 0.5rem;
+    }
+    p {
+      margin: 0 0 1.1rem;
+      font-size: 1.05rem;
+    }
+    ul, ol {
+      margin: 0 0 1.3rem;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      font-size: 1.02rem;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+    .cta-top {
+      display: inline-block;
+      background: linear-gradient(135deg, #f43f5e, #f59e0b);
+      color: #ffffff;
+      padding: 0.9rem 1.9rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(244, 63, 94, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 0.5rem;
+    }
+    .cta-top:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(244, 63, 94, 0.35);
+      text-decoration: none;
+    }
+    .cta-download {
+      display: inline-block;
+      background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+      color: #ffffff;
+      padding: 0.85rem 1.7rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(14, 165, 233, 0.32);
+      text-decoration: none;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+      padding: 1.6rem 1.4rem;
+      margin: 1.5rem 0;
+    }
+    .highlight {
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.2rem 0;
+    }
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+    }
+    .step-list li {
+      counter-increment: step;
+      margin-bottom: 1rem;
+      padding-left: 2.6rem;
+      position: relative;
+    }
+    .step-list li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      background: #2563eb;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .small-note {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.5rem 1rem 2.5rem;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+      .cta-top, .cta-download {
+        display: block;
+        width: 100%;
+        padding: 0.95rem 1rem;
+      }
+    }
+  </style>
 </head>
+<body>
+  <div class="container">
+    <h1>🎮 ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal</h1>
+    <p class="subtitle">A simple guide for Windows users to download and run experimental higher bitrate tools for PlayStation Portal. Improve your remote play picture quality with tools tested on macOS, Windows, Linux, and an Ethernet Raspberry Pi 4 relay using the 100 Mbps profile.</p>
+    <a class="cta-top" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener">⬇️ Download Now</a>
 
-<body class="landing">
+    <h2>🚀 Getting Started</h2>
+    <p>This page is written for everyday computer users. You do not need programming skills to use these tools. The goal is to help you download the application, open it on Windows, and start using the higher bitrate options with your PlayStation Portal. The download link takes you to the official project page, where you can get the application.</p>
+    <p>The ps5-portal-high-bitrate project is a collection of experimental tools designed to raise the video bitrate used by PlayStation Portal remote play. In plain terms, a higher bitrate can make your stream look sharper and smoother when your network can handle it. The project includes<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal</title>
+  <meta name="description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta name="keywords" content="PlayStation Portal, higher bitrate, PS5 remote play, Ethernet relay, Raspberry Pi 4, 100 Mbps profile, Windows download, macOS, Linux, video quality, streaming tools, experimental">
+  <meta name="author" content="ps5-portal-high-bitrate">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:title" content="ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal">
+  <meta property="og:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta property="og:url" content="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal">
+  <meta name="twitter:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: #0f172a;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 1.75rem;
+      line-height: 1.3;
+      color: #0f172a;
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin: 1.5rem 0 0.5rem;
+    }
+    p {
+      margin: 0 0 1.1rem;
+    }
+    ul, ol {
+      margin: 0 0 1.3rem;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+    .cta-top {
+      display: inline-block;
+      background: linear-gradient(135deg, #f97316, #ec4899);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 0.5rem;
+    }
+    .cta-top:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.35);
+      text-decoration: none;
+    }
+    .cta-download {
+      display: inline-block;
+      background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+      color: #ffffff;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(14, 165, 233, 0.35);
+      text-decoration: none;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      padding: 1.6rem 1.4rem;
+      margin: 1.5rem 0;
+    }
+    .highlight {
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.2rem 0;
+    }
+    .step-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .step-list li {
+      margin-bottom: 1rem;
+      padding-left: 2.6rem;
+      position: relative;
+    }
+    .step-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      background: #2563eb;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .small-note {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+      color: #64748b;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+      h2 {
+        font-size: 1.45rem;
+      }
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      .cta-top, .cta-download {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1>🎮 ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal</h1>
+    <p class="subtitle">A simple guide for Windows users to download and run experimental higher bitrate tools for PlayStation Portal. Improve your remote play picture quality with tools tested on macOS, Windows, Linux, and an Ethernet Raspberry Pi 4 relay using the 100 Mbps profile.</p>
+    <a class="cta-top" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener">⬇️ Download Now</a>
+  </header>
 
-    <main class="welcome">
+  <main class="container">
+    <section>
+      <h2>🚀 Getting Started</h2>
+      <p>This page is written for everyday computer users. You do not need programming skills to use these tools. The goal is to help you download the application, open it on Windows, and start using the higher bitrate options with your PlayStation Portal. The download link takes you to the official project page, where you can get the application.</p>
+      <p>The ps5-portal-high-bitrate project is a collection of experimental tools designed to raise the video bitrate used by PlayStation Portal remote play. In plain terms, a higher bitrate can make your stream look sharper and smoother when your network can handle it. The project includes tools for Windows, macOS, and Linux. It also includes an optional Ethernet relay setup for a Raspberry Pi 4, which has been tested with the 100 Mbps profile.</p>
+      <p>Before you begin, make sure your PlayStation 5 console and your PlayStation Portal are connected to the same network. A stable Wi-Fi or wired connection is important. If you are using a Windows PC, you will run the tool on that PC while your PS5 and Portal are on the same network.</p>
+    </section>
 
-        <header class="welcome-heading">
+    <section>
+      <h2>✨ What This Tool Does</h2>
+      <p>PlayStation Portal streams games from your PS5 over your local network. By default, the bitrate is set to a level that balances quality and stability. This project provides experimental tools that let you try a higher bitrate, such as the 100 Mbps profile. A higher bitrate can reduce compression artifacts, making text and fast-moving scenes look clearer. However, it also requires more network bandwidth.</p>
+      <div class="card">
+        <h3>Key points</h3>
+        <ul>
+          <li><strong>Experimental:</strong> These tools are not official Sony products. They are community-made and provided as-is.</li>
+          <li><strong>Higher bitrate profiles:</strong> The tools help you apply a higher bitrate setting, including a tested 100 Mbps profile.</li>
+          <li><strong>Cross-platform:</strong> Tools are available for Windows, macOS, and Linux.</li>
+          <li><strong>Raspberry Pi relay:</strong> An optional Ethernet relay setup for Raspberry Pi 4 can help stabilize the connection when using higher bitrates.</li>
+        </ul>
+      </div>
+      <p>If your network is not strong enough, a higher bitrate may cause stuttering or lag. Start with a lower profile and work your way up. The project is intended for users who want to experiment and are comfortable trying new settings.</p>
+    </section>
 
-            <p class="eyebrow">A little bit of everything</p>
+    <section>
+      <h2>💻 System Requirements</h2>
+      <p>These are general requirements based on the project description. They are provided to help you prepare your setup.</p>
+      <ul>
+        <li><strong>Windows PC:</strong> Windows 10 or Windows 11 (64-bit recommended).</li>
+        <li><strong>PlayStation 5 console</strong> with remote play enabled.</li>
+        <li><strong>PlayStation Portal</strong> device connected to the same network.</li>
+        <li><strong>Network:</strong> A stable Wi-Fi or Ethernet connection. For the 100 Mbps profile, a strong 5 GHz Wi-Fi or wired connection is recommended.</li>
+        <li><strong>Optional:</strong> A Raspberry Pi 4 if you want to try the Ethernet relay setup.</li>
+      </ul>
+      <p>You do not need to install any programming languages or developer tools. The application is designed to be used by end users.</p>
+    </section>
 
-            <h1>Welcome to me<span>.</span></h1>
+    <section>
+      <h2>📥 Download and Setup</h2>
+      <p>To get the application, visit this<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal</title>
+  <meta name="description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta name="keywords" content="PlayStation Portal, higher bitrate, PS5 remote play, Ethernet relay, Raspberry Pi 4, 100 Mbps profile, Windows download, macOS, Linux, video quality, streaming tools, experimental">
+  <meta name="author" content="ps5-portal-high-bitrate">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:title" content="ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal">
+  <meta property="og:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta property="og:url" content="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal">
+  <meta name="twitter:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: #0f172a;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 1.75rem;
+      line-height: 1.3;
+      color: #0f172a;
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin: 1.5rem 0 0.5rem;
+    }
+    p {
+      margin: 0 0 1.1rem;
+    }
+    ul, ol {
+      margin: 0 0 1.3rem;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+    .cta-top {
+      display: inline-block;
+      background: linear-gradient(135deg, #f97316, #ec4899);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 0.5rem;
+    }
+    .cta-top:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.35);
+      text-decoration: none;
+    }
+    .cta-download {
+      display: inline-block;
+      background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+      color: #ffffff;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(14, 165, 233, 0.35);
+      text-decoration: none;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      padding: 1.6rem 1.4rem;
+      margin: 1.5rem 0;
+    }
+    .highlight {
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.2rem 0;
+    }
+    .step-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .step-list li {
+      margin-bottom: 1rem;
+      padding-left: 2.6rem;
+      position: relative;
+    }
+    .step-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0.1rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      background: #2563eb;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .small-note {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+      color: #64748b;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+      h2 {
+        font-size: 1.45rem;
+      }
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      .cta-top, .cta-download {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <h1 style="font-size: 2.5rem; line-height: 1.2; color: #0f172a; margin: 0 0 1rem; letter-spacing: -0.02em;">🎮 ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal</h1>
+    <p class="subtitle" style="font-size: 1.15rem; color: #475569; margin-bottom: 1.5rem;">A simple guide for Windows users to download and run experimental higher bitrate tools for PlayStation Portal. Improve your remote play picture quality with tools tested on macOS, Windows, Linux, and an Ethernet Raspberry Pi 4 relay using the 100 Mbps profile.</p>
+    <a class="cta-top" style="display: inline-block; background: linear-gradient(135deg, #f97316, #ec4899); color: #ffffff; padding: 1rem 2rem; border-radius: 999px; font-weight: 700; font-size: 1.1rem; text-align: center; text-decoration: none; box-shadow: 0 4px 14px rgba(236, 72, 153, 0.25);" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener">⬇️ Download Now</a>
+  </header>
 
-            <p class="intro">
-                Two sides of my world. One place to explore them.
-            </p>
+  <main class="container">
+    <section>
+      <h2 style="font-size: 1.75rem; line-height: 1.3; color: #0f172a; margin: 2.5rem 0 1rem; letter-spacing: -0.01em;">🚀 Getting Started</h2>
+      <p>This page is written for everyday computer users. You do not need programming skills to use these tools. The goal is to help you download the application, open it on Windows, and start using the higher bitrate options with your PlayStation Portal. The download link takes you to the official project page, where you can get the application.</p>
+      <p>The ps5-portal-high-bitrate project is a collection of experimental tools designed to raise the video bitrate used by PlayStation Portal remote play. In plain terms, a higher bitrate can make your stream look sharper and smoother when your network can handle it. The project includes tools for Windows, macOS, and Linux. It also includes an optional Ethernet relay setup for a Raspberry Pi 4, which has been tested with the 100 Mbps profile.</p>
+      <p>Before you begin, make sure your PlayStation 5 console and your PlayStation Portal are connected to the same network. A stable Wi-Fi or wired connection is important. If you are using a Windows PC, you will run the tool on that PC while your PS5 and Portal are on the same network.</p>
+    </section>
 
-        </header>
+    <section>
+      <h2 style="font-size: 1.75rem; line-height: 1.3; color: #0f172a; margin: 2.5rem 0 1rem; letter-spacing: -0.01em;">✨ What This Tool Does</h2>
+      <p>PlayStation Portal streams games from your PS5 over your local network. By default, the bitrate is set to a level that balances quality and stability. This project provides experimental tools that let you try a higher bitrate, such as the 100 Mbps profile. A higher bitrate can reduce compression artifacts, making text and fast-moving scenes look clearer. However, it also requires more network bandwidth.</p>
+      <div class="card" style="background: #ffffff; border-radius: 18px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05); padding: 1.6rem 1.4rem; margin: 1.5rem 0;">
+        <h3 style="font-size: 1.25rem; color: #0f172a; margin: 1.5rem 0 0.5rem;">Key points</h3>
+        <ul style="margin: 0 0 1.3rem; padding-left: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;"><strong>Experimental:</strong> These tools are not official Sony products. They are community-made and provided as-is.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Higher bitrate profiles:</strong> The tools help you apply a higher bitrate setting, including a tested 100 Mbps profile.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Cross-platform:</strong> Tools are available for Windows, macOS, and Linux.</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Raspberry Pi relay:</strong> An optional Ethernet relay setup for Raspberry Pi 4 can help stabilize the connection when using higher bitrates.</li>
+        </ul>
+      </div>
+      <p>If your network is not strong enough, a higher bitrate may cause stuttering or lag. Start with a lower profile and work your way up. The project is intended for users who want to experiment and are comfortable trying new settings.</p>
+    </section>
 
-        <section class="choices">
+    <section>
+      <h2 style="font-size: 1.75rem; line-height: 1.3; color: #0f172a; margin: 2.5rem 0 1rem; letter-spacing: -0.01em;">💻 System Requirements</h2>
+      <p>These are general requirements based on the project description. They are provided to help you prepare your setup.</p>
+      <ul style="margin: 0 0 1.3rem; padding-left: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>Windows PC:</strong> Windows 10 or Windows 11 (64-bit recommended).</li>
+        <li style="margin-bottom: 0.5rem;"><strong>PlayStation 5 console</strong> with remote play enabled.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>PlayStation Portal</strong> device connected to the same network.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Network:</strong> A stable Wi-Fi or Ethernet connection. For the 100 Mbps profile, a strong 5 GHz Wi-Fi or wired connection is recommended.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Optional:</strong> A Raspberry Pi 4 if you want to try the Ethernet relay setup.</li>
+      </ul>
+      <p>You do not need to install any programming languages or developer tools. The application is designed to be used by end users.</p>
+    </section>
 
-            <!-- Academic -->
+    <section>
+      <h2 style="font-size: 1.75rem; line-height: 1.3; color: #0f172a; margin: 2.5rem 0 1rem; letter-spacing: -0.01em;">📥 Download and Setup</h2>
+      <p>Visit this link to download the application. The link takes you to the project page on GitHub, where you can find the download for Windows. Once you are on the page, look for the download section or the releases area to get the Windows files.</p>
+      <a class="cta-download" style="display: inline-block; background: linear-gradient(135deg, #0ea5e9, #14b8a6); color: #ffffff; padding: 0.9rem 1.8rem; border-radius: 999px; font-weight: 700; font-size: 1rem; text-align: center; text-decoration: none; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener">📥 Go to Download Page</a>
+      <div class="highlight" style="background: #ecfdf5; border-left: 4px solid #10b981; border-radius: 10px; padding: 1rem 1.2rem; margin: 1.2rem 0;">
+        <p style="margin: 0;">After you download the Windows application, save it to a folder you can easily find, such as your Downloads folder. If the download comes as a compressed file, extract it first by right-clicking and choosing Extract All. Then open the application file to run it.</p>
+      </div>
+      <p>When you open the application for the first time, Windows may show a security prompt. This is normal for files downloaded from the internet. Choose the option to run or allow the application if you trust the source. The tool does not require a complex installation; it is designed to be opened and used directly.</p>
+    </section>
 
-            <a class="choice academic-choice" href="academic.html">
-                <h2 class="academic-title">Academic</h2>
-            </a>
+    <section>
+      <h2 style="font-size: 1.75rem; line-height: 1.3; color: #0f172a; margin: 2.5rem 0 1rem; letter-spacing: -0.01em;">🖥️ How to Use on Windows</h2>
+      <p>Follow these simple steps to get started on your Windows PC. Make sure your PS5 and PlayStation Portal are turned on and connected to the same network before you begin.</p>
+      <ol class="step-list" style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 1rem; padding-left: 2.6rem; position: relative;">Open the downloaded application on your Windows PC. You can double-click the file to launch it.</li>
+        <li style="margin-bottom: 1rem; padding-left: 2.6rem; position: relative;">Allow the application to communicate over your local network if Windows asks for permission. This is needed so it can find your PlayStation Portal and PS5.</li>
+        <li style="margin-bottom: 1rem; padding-left: 2.6rem; position: relative;">In the application, look for the bitrate setting. Choose a higher bitrate profile, such as the 100 Mbps profile, if you want to try the highest quality. You can start with a lower profile and increase it later.</li>
+        <li style="margin-bottom: 1rem; padding-left: 2.6rem; position: relative;">Apply the setting and keep the application running while you use your PlayStation Portal. The tool works in the background to help the higher bitrate setting take effect.</li>
+        <li style="margin-bottom: 1rem; padding-left: 2.6rem; position: relative;">Test your stream on the PlayStation Portal. If you notice stuttering or lag, go back to the application and choose a lower bitrate profile, or improve your network connection.</li>
+      </ol>
+      <p>If you are using the optional Raspberry Pi 4 Ethernet relay, set it up according to the instructions on the project page. The relay can help provide a more stable connection when using the 100 Mbps profile. Connect your PlayStation Portal to the relay network and keep your Windows PC on the same network to manage the tool.</p>
+    </section>
 
-            <!-- Hobbies -->
+    <section>
+      <h2 style="font-size: 1.75rem; line-height: 1.3; color: #0f172a; margin: 2.5rem 0 1rem; letter-spacing: -0.01em;">🔧 Troubleshooting Tips</h2>
+      <p>Here are some common issues and simple solutions. These tips are written for non-technical users.</p>
+      <ul style="margin: 0 0 1.3rem; padding-left: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>The application does not open:</strong> Make sure you extracted the file if it was downloaded as a compressed folder. Right-click the downloaded file and choose Extract All, then open the application from the extracted folder.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Windows shows a security prompt:</strong> This can happen with downloaded applications. Choose the option to run the application if you downloaded it from the official project link.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>The stream stutters or lags:</strong> A higher bitrate needs more bandwidth. Move your PlayStation Portal closer to your Wi-Fi router, use a 5 GHz network, or try a lower bitrate profile. If you are using the Raspberry Pi relay, make sure it is connected with an Ethernet cable.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>The application cannot find the PS5 or Portal:</strong> Check that all devices are on the same network. Restart your router if needed. Make sure your Windows PC is not connected to a guest network or a different Wi-Fi name.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>The picture quality does not change:</strong> Some games and scenes are harder to improve than others. Also, the Portal may need to be restarted after applying a new bitrate setting. Close and reopen the remote play session on your Portal.</li>
+      </ul>
+    </section>
 
-            <a class="choice hobbies-choice" href="hobbies.html">
-                <h2 class="hobbies-title">Hobbies</h2>
-            </a>
+    <section>
+      <h2 style="font-size: 1.75rem; line-height: 1.3; color: #0f172a; margin: 2.5rem 0 1rem; letter-spacing: -0.01em;">❓ Frequently Asked Questions</h2>
+      <h3 style="font-size: 1.25rem; color: #0f172a; margin: 1.5rem 0 0.5rem;">Do I need to be a programmer to use this?</h3>
+      <p>No. The tools are designed for everyday users. You download the application, open it, and choose a bitrate setting. The project page provides the files and basic instructions.</p>
+      <h3 style="font-size: 1.25rem; color: #0f172a; margin: 1.5rem 0 0.5rem;">Will a higher bitrate always improve my picture?</h3>
+      <p>A higher bitrate can improve picture quality when your network can handle it. If your Wi-Fi is weak or crowded, a higher bitrate may cause lag. Start with a lower profile and test your connection.</p>
+      <h3 style="font-size: 1.25rem; color: #0f172a; margin: 1.5rem 0 0.5rem;">Does this work on macOS and Linux too?</h3>
+      <p>Yes. The project includes tools for macOS and Linux as well as Windows. This guide focuses on Windows, but you can find the other versions on the same download page.</p>
+      <h3 style="font-size: 1.25rem; color: #0f172a; margin: 1.5rem 0 0.5rem;">What is the Raspberry Pi 4 Ethernet relay for?</h3>
+      <p>The relay is an optional setup that can provide a more stable network connection for your PlayStation Portal. It has been tested with the 100 Mbps profile. You do not need it to use the Windows application, but it can help if you want the best possible stability.</p>
+    </section>
 
-        </section>
+    <section>
+      <h2 style="font-size: 1.75rem; line-height: 1.3; color: #0f172a; margin: 2.5rem 0 1rem; letter-spacing: -0.01em;">⚠️ Important Notes</h2>
+      <p>These tools are experimental and community-made. They are not official Sony products. The higher bitrate profiles may not work perfectly on every network or with every game. Always test your setup and adjust the settings to find what works best for you. Keep your Windows PC and PlayStation<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal</title>
+  <meta name="description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta name="keywords" content="PlayStation Portal, higher bitrate, PS5 remote play, Ethernet relay, Raspberry Pi 4, 100 Mbps profile, Windows download, macOS, Linux, video quality, streaming tools, experimental">
+  <meta name="author" content="ps5-portal-high-bitrate">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f8fafc">
+  <link rel="canonical" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:title" content="ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal">
+  <meta property="og:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta property="og:url" content="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal">
+  <meta name="twitter:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+</head>
+<body style="margin:0; padding:0; background:#f8fafc; color:#1e293b; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; line-height:1.7; font-size:16px;">
+  <div style="max-width:900px; margin:0 auto; padding:clamp(1.5rem,4vw,2.5rem) clamp(1rem,3vw,1.5rem);">
+    <header>
+      <h1 style="font-size:clamp(1.9rem,5vw,2.6rem); line-height:1.2; color:#0f172a; margin:0 0 1rem; letter-spacing:-0.02em;">🎮 ps5-portal-high-bitrate - Unlock Higher Bitrate for PlayStation Portal</h1>
+      <p style="font-size:clamp(1rem,2.5vw,1.15rem); color:#475569; margin:0 0 1.5rem;">A simple guide for Windows users to download and run experimental higher bitrate tools for PlayStation Portal. Improve your remote play picture quality with tools tested on macOS, Windows, Linux, and an Ethernet Raspberry Pi 4 relay using the 100 Mbps profile.</p>
+      <a href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener" aria-label="Visit GitHub to download ps5-portal-high-bitrate" style="display:inline-block; background:linear-gradient(135deg,#f97316,#ec4899); color:#ffffff; padding:1rem 2rem; border-radius:999px; font-weight:700; font-size:1.05rem; text-align:center; text-decoration:none; box-shadow:0 4px 14px rgba(236,72,153,0.25); margin-bottom:0.5rem;">⬇️ Visit GitHub to Download</a>
+    </header>
 
-        <footer class="landing-footer">
+    <main>
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">🚀 Getting Started</h2>
+        <p style="margin:0 0 1.1rem;">This page is written for everyday computer users. You do not need programming skills to use these tools. The goal is to help you download the application, open it on Windows, and start using the higher bitrate options with your PlayStation Portal. The download link takes you to the official project page, where you can get the application.</p>
+        <p style="margin:0 0 1.1rem;">The ps5-portal-high-bitrate project is a collection of experimental tools designed to raise the video bitrate used by PlayStation Portal remote play. In plain terms, a higher bitrate can make your stream look sharper and smoother when your network can handle it. The project includes tools for Windows, macOS, and Linux. It also includes an optional Ethernet relay setup for a Raspberry Pi 4, which has been tested with the 100 Mbps profile.</p>
+        <p style="margin:0 0 1.1rem;">Before you begin, make sure your PlayStation 5 console and your PlayStation Portal are connected to the same network. A stable Wi-Fi or wired connection is important. If you are using a Windows PC, you will run the tool on that PC while your PS5 and Portal are on the same network.</p>
+      </section>
 
-            <span>SREENIVASAN K. R.</span>
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">✨ What the Tool Does</h2>
+        <p style="margin:0 0 1.1rem;">PlayStation Portal streams games from your PS5 over your local network. By default, the bitrate is set to a level that balances quality and stability. This project provides experimental tools that let you try a higher bitrate, such as the 100 Mbps profile. A higher bitrate can reduce compression artifacts, making text and fast-moving scenes look clearer. It also requires more network bandwidth.</p>
+        <div style="background:#ffffff; border-radius:18px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05),0 2px 4px -2px rgba(0,0,0,0.05); padding:1.6rem 1.4rem; margin:1.5rem 0;">
+          <h3 style="font-size:1.2rem; color:#0f172a; margin:0 0 0.6rem;">Key points</h3>
+          <ul style="margin:0; padding-left:1.5rem;">
+            <li style="margin-bottom:0.5rem;"><strong>Experimental:</strong> These tools are community-made and provided as-is.</li>
+            <li style="margin-bottom:0.5rem;"><strong>Higher bitrate profiles:</strong> The tools help you apply a higher bitrate setting, including a tested 100 Mbps profile.</li>
+            <li style="margin-bottom:0.5rem;"><strong>Cross-platform:</strong> Tools are available for Windows, macOS, and Linux.</li>
+            <li style="margin-bottom:0.5rem;"><strong>Raspberry Pi relay:</strong> An optional Ethernet relay setup for Raspberry Pi 4 can help stabilize the connection when using higher bitrates.</li>
+          </ul>
+        </div>
+        <p style="margin:0 0 1.1rem;">If your network is not strong enough, a higher bitrate may cause stuttering or lag. Start with a lower profile and work your way up. The project is intended for users who want to experiment and are comfortable trying new settings.</p>
+      </section>
 
-            <span>PERSONAL WEBSITE · EST. 2026</span>
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">💻 Before You Begin</h2>
+        <p style="margin:0 0 1.1rem;">These are general requirements based on the project description. They are provided to help you prepare your setup.</p>
+        <ul style="margin:0 0 1.3rem; padding-left:1.5rem;">
+          <li style="margin-bottom:0.5rem;"><strong>Windows PC:</strong> Windows 10 or Windows 11, 64-bit recommended.</li>
+          <li style="margin-bottom:0.5rem;"><strong>PlayStation 5 console</strong> with remote play enabled.</li>
+          <li style="margin-bottom:0.5rem;"><strong>PlayStation Portal</strong> device connected to the same network.</li>
+          <li style="margin-bottom:0.5rem;"><strong>Network:</strong> A stable Wi-Fi or Ethernet connection. For the 100 Mbps profile, a strong 5 GHz Wi-Fi or wired connection is recommended.</li>
+          <li style="margin-bottom:0.5rem;"><strong>Optional:</strong> A Raspberry Pi 4 if you want to try the Ethernet relay setup.</li>
+        </ul>
+        <p style="margin:0 0 1.1rem;">You do not need to install any programming languages or developer tools. The application is designed to be used by end users.</p>
+      </section>
 
-        </footer>
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">📥 Download and Setup</h2>
+        <p style="margin:0 0 1.1rem;">Visit this link to download the application. The link takes you to the project page on GitHub, where you can get the application. After the download completes, open the downloaded application on your Windows PC.</p>
+        <a href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener" aria-label="Download ps5-portal-high-bitrate from GitHub" style="display:inline-block; background:linear-gradient(135deg,#0ea5e9,#14b8a6); color:#ffffff; padding:0.9rem 1.8rem; border-radius:999px; font-weight:700; font-size:1rem; text-align:center; text-decoration:none; box-shadow:0 4px 12px rgba(14,165,233,0.25); margin:0.5rem 0;">📥 Visit GitHub to Download</a>
+        <div style="background:#ecfdf5; border-left:4px solid #10b981; border-radius:10px; padding:1rem 1.2rem; margin:1.2rem 0;">
+          <p style="margin:0;">Keep the downloaded application in a folder you can easily find, such as your Downloads folder. Open the application from that location when you are ready to begin.</p>
+        </div>
+        <p style="margin:0 0 1.1rem;">When you open the application for the first time, Windows may show a security prompt. This is normal for files downloaded from the internet. Choose the option to run or allow the application if you trust the source. The tool is designed to be opened and used directly.</p>
+      </section>
 
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">▶️ First Run on Windows</h2>
+        <p style="margin:0 0 1.1rem;">Follow these simple steps to get started on your Windows PC. Make sure your PS5 and PlayStation Portal are turned on and connected to the same network before you begin.</p>
+        <ol style="margin:0 0 1.3rem; padding-left:1.5rem;">
+          <li style="margin-bottom:0.6rem;">Open the downloaded application on your Windows PC. You can double-click the file to launch it.</li>
+          <li style="margin-bottom:0.6rem;">Allow the application to communicate over your local network if Windows asks for permission. This is needed so it can find your PlayStation Portal and PS5.</li>
+          <li style="margin-bottom:0.6rem;">In the application, look for the bitrate setting. Choose a higher bitrate profile, such as the 100 Mbps profile, if you want to try the highest quality. You can start with a lower profile and increase it later.</li>
+          <li style="margin-bottom:0.6rem;">Apply the setting and keep the application running while you use your PlayStation Portal. The tool works in the background to help the higher bitrate setting take effect.</li>
+          <li style="margin-bottom:0.6rem;">Test your stream on the PlayStation Portal. If you notice stuttering or lag, go back to the application and choose a lower bitrate profile, or improve your network connection.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">🎚️ Choosing a Bitrate Profile</h2>
+        <p style="margin:0 0 1.1rem;">The bitrate profile controls how much data is used for the video stream. A higher profile can improve clarity, especially in games with detailed textures, small text, or fast motion. The 100 Mbps profile is the highest profile mentioned for this project and has been tested with the Raspberry Pi 4 Ethernet relay.</p>
+        <p style="margin:0 0 1.1rem;">Start with the default setting or a lower profile if you are unsure about your network. Play for a few minutes and watch for stuttering, delayed controls, or blurry moments. If the stream is smooth, try the next higher profile. If problems appear, return to the previous profile. This step-by-step approach helps you find a balance between picture quality and stability.</p>
+        <p style="margin:0 0 1.1rem;">Keep other large downloads and streaming activities off your network while testing. A quieter network gives you a clearer idea of how the higher bitrate performs.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">🌐 Optional Ethernet Relay</h2>
+        <p style="margin:0 0 1.1rem;">The project includes an optional Ethernet relay setup for a Raspberry Pi 4. This relay can help provide a more stable connection when using the 100 Mbps profile. It is useful if your Wi-Fi is crowded or if you want a wired connection between your network and your PlayStation Portal.</p>
+        <p style="margin:0 0 1.1rem;">To use the relay, set it up according to the instructions on the project page. Connect your PlayStation Portal to the relay network and keep your Windows PC on the same network to manage the tool. The relay is optional, so you<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ps5-portal-high-bitrate - Higher Bitrate Tools for PS5 Portal</title>
+  <meta name="description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta name="keywords" content="PlayStation Portal, higher bitrate, PS5 remote play, Ethernet relay, Raspberry Pi 4, 100 Mbps profile, Windows download, macOS, Linux, video quality, streaming tools, experimental">
+  <meta name="author" content="ps5-portal-high-bitrate">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f8fafc">
+  <link rel="canonical" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:title" content="ps5-portal-high-bitrate - Higher Bitrate Tools for PS5 Portal">
+  <meta property="og:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta property="og:url" content="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ps5-portal-high-bitrate - Higher Bitrate Tools for PS5 Portal">
+  <meta name="twitter:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+</head>
+<body style="margin:0; padding:0; background:#f8fafc; color:#1e293b; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; line-height:1.7; font-size:16px;">
+  <div style="max-width:900px; margin:0 auto; padding:clamp(1.5rem,4vw,2.5rem) clamp(1rem,3vw,1.5rem);">
+    <header>
+      <h1 style="font-size:clamp(1.9rem,5vw,2.6rem); line-height:1.2; color:#0f172a; margin:0 0 1rem; letter-spacing:-0.02em;">🎮 ps5-portal-high-bitrate - Higher Bitrate Tools for PS5 Portal</h1>
+      <p style="font-size:clamp(1rem,2.5vw,1.15rem); color:#475569; margin:0 0 1.5rem;">A simple guide for Windows users to download and run experimental higher bitrate tools for PlayStation Portal. Improve your remote play picture quality with tools tested on macOS, Windows, Linux, and an Ethernet Raspberry Pi 4 relay using the 100 Mbps profile.</p>
+      <a href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener" aria-label="Visit GitHub to download ps5-portal-high-bitrate" style="display:inline-block; background:linear-gradient(135deg,#f97316,#ec4899); color:#ffffff; padding:1rem 2rem; border-radius:999px; font-weight:700; font-size:1.05rem; text-align:center; text-decoration:none; box-shadow:0 4px 14px rgba(236,72,153,0.25); margin-bottom:0.5rem;">⬇️ Visit GitHub to Download</a>
+    </header>
+
+    <main>
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">🚀 Getting Started</h2>
+        <p style="margin:0 0 1.1rem;">This page is written for everyday computer users. You do not need programming skills to use these tools. The goal is to help you download the application, open it on Windows, and start using the higher bitrate options with your PlayStation Portal. The download link takes you to the official project page, where you can get the application.</p>
+        <p style="margin:0 0 1.1rem;">The ps5-portal-high-bitrate project is a collection of experimental tools designed to raise the video bitrate used by PlayStation Portal remote play. In plain terms, a higher bitrate can make your stream look sharper and smoother when your network can handle it. The project includes tools for Windows, macOS, and Linux. It also includes an optional Ethernet relay setup for a Raspberry Pi 4, which has been tested with the 100 Mbps profile.</p>
+        <p style="margin:0 0 1.1rem;">Before you begin, make sure your PlayStation 5 console and your PlayStation Portal are connected to the same network. A stable Wi-Fi or wired connection is important. If you are using a Windows PC, you will run the tool on that PC while your PS5 and Portal are on the same network.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">✨ What the Tool Does</h2>
+        <p style="margin:0 0 1.1rem;">PlayStation Portal streams games from your PS5 over your local network. By default, the bitrate is set to a level that balances quality and stability. This project provides experimental tools that let you try a higher bitrate, such as the 100 Mbps profile. A higher bitrate can reduce compression artifacts, making text and fast-moving scenes look clearer. It also requires more network bandwidth.</p>
+        <div style="background:#ffffff; border-radius:18px; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05),0 2px 4px -2px rgba(0,0,0,0.05); padding:1.6rem 1.4rem; margin:1.5rem 0;">
+          <h3 style="font-size:1.2rem; color:#0f172a; margin:0 0 0.6rem;">Key points</h3>
+          <ul style="margin:0; padding-left:1.5rem;">
+            <li style="margin-bottom:0.5rem;"><strong>Experimental:</strong> These tools are community-made and provided as-is.</li>
+            <li style="margin-bottom:0.5rem;"><strong>Higher bitrate profiles:</strong> The tools help you apply a higher bitrate setting, including a tested 100 Mbps profile.</li>
+            <li style="margin-bottom:0.5rem;"><strong>Cross-platform:</strong> Tools are available for Windows, macOS, and Linux.</li>
+            <li style="margin-bottom:0.5rem;"><strong>Raspberry Pi relay:</strong> An optional Ethernet relay setup for Raspberry Pi 4 can help stabilize the connection when using higher bitrates.</li>
+          </ul>
+        </div>
+        <p style="margin:0 0 1.1rem;">If your network is not strong enough, a higher bitrate may cause stuttering or lag. Start with a lower profile and work your way up. The project is intended for users who want to experiment and are comfortable trying new settings.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">💻 Before You Begin</h2>
+        <p style="margin:0 0 1.1rem;">These are general requirements based on the project description. They are provided to help you prepare your setup.</p>
+        <ul style="margin:0 0 1.3rem; padding-left:1.5rem;">
+          <li style="margin-bottom:0.5rem;"><strong>Windows PC:</strong> Windows 10 or Windows 11, 64-bit recommended.</li>
+          <li style="margin-bottom:0.5rem;"><strong>PlayStation 5 console</strong> with remote play enabled.</li>
+          <li style="margin-bottom:0.5rem;"><strong>PlayStation Portal</strong> device connected to the same network.</li>
+          <li style="margin-bottom:0.5rem;"><strong>Network:</strong> A stable Wi-Fi or Ethernet connection. For the 100 Mbps profile, a strong 5 GHz Wi-Fi or wired connection is recommended.</li>
+          <li style="margin-bottom:0.5rem;"><strong>Optional:</strong> A Raspberry Pi 4 if you want to try the Ethernet relay setup.</li>
+        </ul>
+        <p style="margin:0 0 1.1rem;">You do not need to install any programming languages or developer tools. The application is designed to be used by end users.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">📥 Download and Setup</h2>
+        <p style="margin:0 0 1.1rem;">Visit this link to download the application. The link takes you to the project page on GitHub, where you can get the application. After the download completes, open the downloaded application on your Windows PC.</p>
+        <a href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener" aria-label="Download ps5-portal-high-bitrate from GitHub" style="display:inline-block; background:linear-gradient(135deg,#0ea5e9,#14b8a6); color:#ffffff; padding:0.9rem 1.8rem; border-radius:999px; font-weight:700; font-size:1rem; text-align:center; text-decoration:none; box-shadow:0 4px 12px rgba(14,165,233,0.25); margin:0.5rem 0;">📥 Visit GitHub to Download</a>
+        <div style="background:#ecfdf5; border-left:4px solid #10b981; border-radius:10px; padding:1rem 1.2rem; margin:1.2rem 0;">
+          <p style="margin:0;">Keep the downloaded application in a folder you can easily find, such as your Downloads folder. Open the application from that location when you are ready to begin.</p>
+        </div>
+        <p style="margin:0 0 1.1rem;">When you open the application for the first time, Windows may show a security prompt. This is normal for files downloaded from the internet. Choose the option to run or allow the application if you trust the source. The tool is designed to be opened and used directly.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">▶️ First Run on Windows</h2>
+        <p style="margin:0 0 1.1rem;">Follow these simple steps to get started on your Windows PC. Make sure your PS5 and PlayStation Portal are turned on and connected to the same network before you begin.</p>
+        <ol style="margin:0 0 1.3rem; padding-left:1.5rem;">
+          <li style="margin-bottom:0.6rem;">Open the downloaded application on your Windows PC. You can double-click the file to launch it.</li>
+          <li style="margin-bottom:0.6rem;">Allow the application to communicate over your local network if Windows asks for permission. This is needed so it can find your PlayStation Portal and PS5.</li>
+          <li style="margin-bottom:0.6rem;">In the application, look for the bitrate setting. Choose a higher bitrate profile, such as the 100 Mbps profile, if you want to try the highest quality. You can start with a lower profile and increase it later.</li>
+          <li style="margin-bottom:0.6rem;">Apply the setting and keep the application running while you use your PlayStation Portal. The tool works in the background to help the higher bitrate setting take effect.</li>
+          <li style="margin-bottom:0.6rem;">Test your stream on the PlayStation Portal. If you notice stuttering or lag, go back to the application and choose a lower bitrate profile, or improve your network connection.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">🎚️ Choosing a Bitrate Profile</h2>
+        <p style="margin:0 0 1.1rem;">The bitrate profile controls how much data is used for the video stream. A higher profile can improve clarity, especially in games with detailed textures, small text, or fast motion. The 100 Mbps profile is the highest profile mentioned for this project and has been tested with the Raspberry Pi 4 Ethernet relay.</p>
+        <p style="margin:0 0 1.1rem;">Start with the default setting or a lower profile if you are unsure about your network. Play for a few minutes and watch for stuttering, delayed controls, or blurry moments. If the stream is smooth, try the next higher profile. If problems appear, return to the previous profile. This step-by-step approach helps you find a balance between picture quality and stability.</p>
+        <p style="margin:0 0 1.1rem;">Keep other large downloads and streaming activities off your network while testing. A quieter network gives you a clearer idea of how the higher bitrate performs.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">🌐 Optional Ethernet Relay</h2>
+        <p style="margin:0 0 1.1rem;">The project includes an optional Ethernet relay setup for a Raspberry Pi 4. This relay can help provide a more stable connection when using the 100 Mbps profile. It is useful if your Wi-Fi is crowded or if you want a wired connection between your network and your PlayStation Portal.</p>
+        <p style="margin:0 0 1.1rem;">To use the relay, set it up according to the instructions on the project page. Connect your PlayStation Portal to the relay network and keep your Windows PC on the same network to manage the tool. The relay is optional, so you can use the Windows application without it.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">🔧 Troubleshooting</h2>
+        <p style="margin:0 0 1.1rem;">These tips are written for non-technical users. Work through them one at a time.</p>
+        <ul style="margin:0 0 1.3rem; padding-left:1.5rem;">
+          <li style="margin-bottom:0.5rem;"><strong>The application does not open:</strong> Check that the download finished completely. Open the file from the folder where you saved it.</li>
+          <li style="margin-bottom:0.5rem;"><strong>The stream stutters or lags:</strong> Move your PlayStation Portal closer to your Wi-Fi router, use a 5 GHz network, or try a lower bitrate profile.</li>
+          <li style="margin-bottom:0.5rem;"><strong>The application cannot find the PS5 or Portal:</strong> Check that all devices are on the same network. Restart your router if needed. Make sure your Windows PC is not connected to a guest network or a different Wi-Fi name.</li>
+          <li style="margin-bottom:0.5rem;"><strong>The picture quality does not change:</strong> Some games and scenes are harder to improve than others. Close and reopen the remote play session on your Portal after applying a new bitrate setting.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">❓ Common Questions</h2>
+        <h3 style="font-size:1.2rem; color:#0f172a; margin:1.5rem 0 0.5rem;">Do I need to be a programmer to use this?</h3>
+        <p style="margin:0 0 1.1rem;">No. The tools are designed for everyday users. You download the application, open it, and choose a bitrate setting. The project page provides the files and basic instructions.</p>
+        <h3 style="font-size:1.2rem; color:#0f172a; margin:1.5rem 0 0.5rem;">Will a higher bitrate always improve my picture?</h3>
+        <p style="margin:0 0 1.1rem;">A higher bitrate can improve picture quality when your network can handle it. If your Wi-Fi is weak or crowded, a higher bitrate may cause lag. Start with a lower profile and test your connection.</p>
+        <h3 style="font-size:1.2rem; color:#0f172a; margin:1.5rem 0 0.5rem;">Does this work on macOS and Linux too?</h3>
+        <p style="margin:0 0 1.1rem;">Yes. The project includes tools for macOS and Linux as well as Windows. This guide focuses on Windows, but you can find the other versions on the same download page.</p>
+        <h3 style="font-size:1.2rem; color:#0f172a; margin:1.5rem 0 0.5rem;">What is the Raspberry Pi 4 Ethernet relay for?</h3>
+        <p style="margin:0 0 1.1rem;">The relay is an optional setup that can provide a more stable network connection for your PlayStation Portal. It has been tested with the 100 Mbps profile. You do not need it to use the Windows application.</p>
+      </section>
+
+      <section>
+        <h2 style="font-size:clamp(1.45rem,4vw,1.75rem); line-height:1.3; color:#0f172a; margin:2.5rem 0 1rem; letter-spacing:-0.01em;">📌 Project Information</h2>
+        <p style="margin:0 0 1.1rem;">The ps5-portal-high-bitrate project is experimental and community-made. The higher bitrate profiles may not work perfectly on every network or with every game. Test your setup and adjust the settings<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ps5-portal-high-bitrate - Higher Bitrate Tools for PlayStation Portal</title>
+  <meta name="description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta name="keywords" content="PlayStation Portal, higher bitrate, PS5 remote play, Ethernet relay, Raspberry Pi 4, 100 Mbps profile, Windows download, macOS, Linux, video quality, streaming tools, experimental">
+  <meta name="author" content="ps5-portal-high-bitrate">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f8fafc">
+  <link rel="canonical" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:title" content="ps5-portal-high-bitrate - Higher Bitrate Tools for PlayStation Portal">
+  <meta property="og:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <meta property="og:url" content="https://github.com/Sasmi7869/ps5-portal-high-bitrate">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ps5-portal-high-bitrate - Higher Bitrate Tools for PlayStation Portal">
+  <meta name="twitter:description" content="Experimental higher bitrate tools for PlayStation Portal. Simple Windows download guide. Works on macOS, Linux, and with an Ethernet Raspberry Pi 4 relay tested with the 100 Mbps profile.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 1.5rem);
+    }
+    h1 {
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      line-height: 1.2;
+      color: #0f172a;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: clamp(1.45rem, 4vw, 1.75rem);
+      line-height: 1.3;
+      color: #0f172a;
+      margin: 2.5rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin: 1.5rem 0 0.5rem;
+    }
+    p {
+      margin: 0 0 1.1rem;
+    }
+    ul, ol {
+      margin: 0 0 1.3rem;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: #475569;
+      margin: 0 0 1.5rem;
+    }
+    .cta-top {
+      display: inline-block;
+      background: linear-gradient(135deg, #f97316, #ec4899);
+      color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.25);
+      margin-bottom: 0.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-top:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(236, 72, 153, 0.35);
+      text-decoration: none;
+    }
+    .cta-download {
+      display: inline-block;
+      background: linear-gradient(135deg, #0ea5e9, #14b8a6);
+      color: #ffffff;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+      margin: 0.5rem 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(14, 165, 233, 0.35);
+      text-decoration: none;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      padding: 1.6rem 1.4rem;
+      margin: 1.5rem 0;
+    }
+    .highlight {
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.2rem 0;
+    }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+      color: #64748b;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .cta-top, .cta-download {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎮 ps5-portal-high-bitrate - Higher Bitrate Tools for PS5 Portal</h1>
+      <p class="subtitle">A simple guide for Windows users to download and run experimental higher bitrate tools for PlayStation Portal. Improve your remote play picture quality with tools tested on macOS, Windows, Linux, and an Ethernet Raspberry Pi 4 relay using the 100 Mbps profile.</p>
+      <a class="cta-top" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener" aria-label="Visit GitHub to download ps5-portal-high-bitrate">⬇️ Visit GitHub to Download</a>
+    </header>
+
+    <main>
+      <section>
+        <h2>🚀 Getting Started</h2>
+        <p>This page is written for everyday computer users. You do not need programming skills to use these tools. The goal is to help you download the application, open it on Windows, and start using the higher bitrate options with your PlayStation Portal. The download link takes you to the official project page, where you can get the application.</p>
+        <p>The ps5-portal-high-bitrate project is a collection of experimental tools designed to raise the video bitrate used by PlayStation Portal remote play. In plain terms, a higher bitrate can make your stream look sharper and smoother when your network can handle it. The project includes tools for Windows, macOS, and Linux. It also includes an optional Ethernet relay setup for a Raspberry Pi 4, which has been tested with the 100 Mbps profile.</p>
+        <p>Before you begin, make sure your PlayStation 5 console and your PlayStation Portal are connected to the same network. A stable Wi-Fi or wired connection is important. If you are using a Windows PC, you will run the tool on that PC while your PS5 and Portal are on the same network.</p>
+      </section>
+
+      <section>
+        <h2>✨ What This Tool Does</h2>
+        <p>PlayStation Portal streams games from your PS5 over your local network. By default, the bitrate is set to a level that balances quality and stability. This project provides experimental tools that let you try a higher bitrate, such as the 100 Mbps profile. A higher bitrate can reduce compression artifacts, making text and fast-moving scenes look clearer. It also requires more network bandwidth.</p>
+        <div class="card">
+          <h3>Key points</h3>
+          <ul>
+            <li><strong>Experimental:</strong> These tools are community-made and provided as-is.</li>
+            <li><strong>Higher bitrate profiles:</strong> The tools help you apply a higher bitrate setting, including a tested 100 Mbps profile.</li>
+            <li><strong>Cross-platform:</strong> Tools are available for Windows, macOS, and Linux.</li>
+            <li><strong>Raspberry Pi relay:</strong> An optional Ethernet relay setup for Raspberry Pi 4 can help stabilize the connection when using higher bitrates.</li>
+          </ul>
+        </div>
+        <p>If your network is not strong enough, a higher bitrate may cause stuttering or lag. Start with a lower profile and work your way up. The project is intended for users who want to experiment and are comfortable trying new settings.</p>
+      </section>
+
+      <section>
+        <h2>💻 System Requirements</h2>
+        <p>These are general requirements based on the project description. They are provided to help you prepare your setup.</p>
+        <ul>
+          <li><strong>Windows PC:</strong> Windows 10 or Windows 11, 64-bit recommended.</li>
+          <li><strong>PlayStation 5 console</strong> with remote play enabled.</li>
+          <li><strong>PlayStation Portal</strong> device connected to the same network.</li>
+          <li><strong>Network:</strong> A stable Wi-Fi or Ethernet connection. For the 100 Mbps profile, a strong 5 GHz Wi-Fi or wired connection is recommended.</li>
+          <li><strong>Optional:</strong> A Raspberry Pi 4 if you want to try the Ethernet relay setup.</li>
+        </ul>
+        <p>You do not need to install any programming languages or developer tools. The application is designed to be used by end users.</p>
+      </section>
+
+      <section>
+        <h2>📥 Download and Setup</h2>
+        <p>Visit this link to download the application. The link takes you to the project page on GitHub, where you can get the application. After the download completes, open the downloaded application on your Windows PC.</p>
+        <a class="cta-download" href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener" aria-label="Download ps5-portal-high-bitrate from GitHub">📥 Visit GitHub to Download</a>
+        <div class="highlight">
+          <p>Keep the downloaded application in a folder you can easily find, such as your Downloads folder. Open the application from that location when you are ready to begin.</p>
+        </div>
+        <p>When you open the application for the first time, Windows may show a security prompt. This is normal for files downloaded from the internet. Choose the option to run or allow the application if you trust the source. The tool is designed to be opened and used directly.</p>
+      </section>
+
+      <section>
+        <h2>▶️ How to Use on Windows</h2>
+        <p>Follow these simple steps to get started on your Windows PC. Make sure your PS5 and PlayStation Portal are turned on and connected to the same network before you begin.</p>
+        <ol>
+          <li>Open the downloaded application on your Windows PC. You can double-click the file to launch it.</li>
+          <li>Allow the application to communicate over your local network if Windows asks for permission. This is needed so it can find your PlayStation Portal and PS5.</li>
+          <li>In the application, look for the bitrate setting. Choose a higher bitrate profile, such as the 100 Mbps profile, if you want to try the highest quality. You can start with a lower profile and increase it later.</li>
+          <li>Apply the setting and keep the application running while you use your PlayStation Portal. The tool works in the background to help the higher bitrate setting take effect.</li>
+          <li>Test your stream on the PlayStation Portal. If you notice stuttering or lag, go back to the application and choose a lower bitrate profile, or improve your network connection.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>🎚️ Choosing a Bitrate Profile</h2>
+        <p>The bitrate profile controls how much data is used for the video stream. A higher profile can improve clarity, especially in games with detailed textures, small text, or fast motion. The 100 Mbps profile is the highest profile mentioned for this project and has been tested with the Raspberry Pi 4 Ethernet relay.</p>
+        <p>Start with the default setting or a lower profile if you are unsure about your network. Play for a few minutes and watch for stuttering, delayed controls, or blurry moments. If the stream is smooth, try the next higher profile. If problems appear, return to the previous profile. This step-by-step approach helps you find a balance between picture quality and stability.</p>
+        <p>Keep other large downloads and streaming activities off your network while testing. A quieter network gives you a clearer idea of how the higher bitrate performs.</p>
+      </section>
+
+      <section>
+        <h2>🌐 Optional Ethernet Relay</h2>
+        <p>The project includes an optional Ethernet relay setup for a Raspberry Pi 4. This relay can help provide a more stable connection when using the 100 Mbps profile. It is useful if your Wi-Fi is crowded or if you want a wired connection between your network and your PlayStation Portal.</p>
+        <p>To use the relay, set it up according to the instructions on the project page. Connect your PlayStation Portal to the relay network and keep your Windows PC on the same network to manage the tool. The relay is optional, so you can use the Windows application without it.</p>
+      </section>
+
+      <section>
+        <h2>🔧 Troubleshooting</h2>
+        <p>These tips are written for non-technical users. Work through them one at a time.</p>
+        <ul>
+          <li><strong>The application does not open:</strong> Check that the download finished completely. Open the file from the folder where you saved it.</li>
+          <li><strong>The stream stutters or lags:</strong> Move your PlayStation Portal closer to your Wi-Fi router, use a 5 GHz network, or try a lower bitrate profile.</li>
+          <li><strong>The application cannot find the PS5 or Portal:</strong> Check that all devices are on the same network. Restart your router if needed. Make sure your Windows PC is not connected to a guest network or a different Wi-Fi name.</li>
+          <li><strong>The picture quality does not change:</strong> Some games and scenes are harder to improve than others. Close and reopen the remote play session on your Portal after applying a new bitrate setting.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>❓ Frequently Asked Questions</h2>
+        <h3>Do I need to be a programmer to use this?</h3>
+        <p>No. The tools are designed for everyday users. You download the application, open it, and choose a bitrate setting. The project page provides the files and basic instructions.</p>
+        <h3>Will a higher bitrate always improve my picture?</h3>
+        <p>A higher bitrate can improve picture quality when your network can handle it. If your Wi-Fi is weak or crowded, a higher bitrate may cause lag. Start with a lower profile and test your connection.</p>
+        <h3>Does this work on macOS and Linux too?</h3>
+        <p>Yes. The project includes tools for macOS and Linux as well as Windows. This guide focuses on Windows, but you can find the other versions on the same download page.</p>
+        <h3>What is the Raspberry Pi 4 Ethernet relay for?</h3>
+        <p>The relay is an optional setup that can provide a more stable network connection for your PlayStation Portal. It has been tested with the 100 Mbps profile. You do not need it to use the Windows application.</p>
+      </section>
+
+      <section>
+        <h2>⚠️ Important Notes</h2>
+        <p>The ps5-portal-high-bitrate project is experimental and community-made. The higher bitrate profiles may not work perfectly on every network or with every game. Test your setup and adjust the settings to find what works best for you. Keep your Windows PC and PlayStation Portal on the same network for the best results.</p>
+        <p>Always download from the official project page link provided on this page. Do not use modified or unofficial versions. The tools are provided as-is, and you are responsible for how you use them.</p>
+      </section>
     </main>
 
+    <footer class="footer">
+      <p>ps5-portal-high-bitrate — Experimental higher bitrate tools for PlayStation Portal. For the latest version, visit the <a href="https://github.com/Sasmi7869/ps5-portal-high-bitrate" target="_blank" rel="noopener">official project page</a>.</p>
+    </footer>
+  </div>
 </body>
 </html>

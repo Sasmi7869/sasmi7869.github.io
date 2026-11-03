@@ -137,18 +137,16 @@ a {
 
 .academic-choice {
 
-    background:
+    background-image:
         linear-gradient(
-            rgba(0, 0, 0, 0.30),
-            rgba(0, 0, 0, 0.40)
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)
         ),
-        url("milkyway.jpeg");
+        url("./milkyway.jpeg");
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-}
 
 .academic-choice .orbit{
     display: none;

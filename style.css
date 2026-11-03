@@ -179,7 +179,24 @@ a {
     background-repeat: no-repeat;
 
 }
+.hobbies-title {
 
+    position: absolute;
+
+    top: 35px;
+    left: 40px;
+
+    margin: 0;
+
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 500;
+
+    color: white;
+
+    z-index: 2;
+
+}
 
 /* Panel headings */
 

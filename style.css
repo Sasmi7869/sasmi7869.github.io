@@ -11,10 +11,9 @@
     --ink: #f5f3ee;
     --muted: rgba(245,243,238,.68);
 
-    --serif: "Playfair Display", Georgia, serif;
-    --sans: "DM Sans", Arial, sans-serif;
+    --serif: "Outfit", sans-serif;
+    --sans: "Outfit", sans-serif;
 }
-
 html {
     min-height: 100%;
 }

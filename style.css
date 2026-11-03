@@ -39,10 +39,10 @@ a {
 
     background-image:
         linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.35)
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
         ),
-        url("./webb.jpg");
+        url("./webb.png");
 
     background-size: cover;
     background-position: center;

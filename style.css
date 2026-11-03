@@ -138,16 +138,15 @@ a {
 .academic-choice {
 
     background:
-        radial-gradient(
-            ellipse at 78% 28%,
-            rgba(86,125,157,.42),
-            transparent 35%
-        ),
         linear-gradient(
-            135deg,
-            #182d43,
-            #101b2a 75%
-        );
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.40)
+        ),
+        url("milkyway.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 

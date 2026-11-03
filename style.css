@@ -167,18 +167,16 @@ a {
 
 .hobbies-choice {
 
-    background:
-        radial-gradient(
-            ellipse at 80% 15%,
-            rgba(230,177,112,.36),
-            transparent 34%
-        ),
+    background-image:
         linear-gradient(
-            135deg,
-            #45534c,
-            #253a37 70%,
-            #1a2c2d
-        );
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("./3capes.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 
@@ -294,30 +292,6 @@ a {
 
 }
 
-.sun {
-
-    position: absolute;
-    z-index: -1;
-
-    width: 310px;
-    height: 310px;
-
-    border-radius: 50%;
-
-    right: -65px;
-    top: 12%;
-
-    background:
-        radial-gradient(
-            circle at 35% 35%,
-            rgba(255,226,179,.55),
-            rgba(213,155,98,.12) 55%,
-            transparent 70%
-        );
-
-    filter: blur(1px);
-
-}
 
 
 /* =================================

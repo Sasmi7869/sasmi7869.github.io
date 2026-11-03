@@ -149,7 +149,9 @@ a {
     background-repeat: no-repeat;
 
 }
-
+.academic-choice .orbit {
+    display: none;
+}
 
 /* Hobbies background */
 

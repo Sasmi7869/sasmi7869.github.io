@@ -36,7 +36,18 @@ a {
 .landing {
     min-height: 100vh;
     color: var(--ink);
-    background: #111a25;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("./webb.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .welcome {

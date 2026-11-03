@@ -175,14 +175,28 @@ a {
         url("./3capes.jpeg");
 
     background-size: cover;
+/* =================================
+   ACADEMIC BACKGROUND
+================================= */
+
+.academic-choice {
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("./milkyway.jpeg");
+
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
 }
-.hobbies-title {
+
+.academic-title {
 
     position: absolute;
-
     top: 35px;
     left: 40px;
 
@@ -193,7 +207,47 @@ a {
     font-weight: 500;
 
     color: white;
+    z-index: 2;
 
+}
+
+.academic-choice .orbit {
+    display: none;
+}
+
+
+/* =================================
+   HOBBIES BACKGROUND
+================================= */
+
+.hobbies-choice {
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("./3capes.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.hobbies-title {
+
+    position: absolute;
+    top: 35px;
+    left: 40px;
+
+    margin: 0;
+
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 500;
+
+    color: white;
     z-index: 2;
 
 }
